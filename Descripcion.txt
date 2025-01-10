@@ -1,0 +1,37 @@
+tomarimagenesAjedrez.py
+Este script captura imágenes desde una cámara y las guarda para su posterior calibración.
+
+Funcionamiento:
+
+Se inicializa la cámara con cv2.VideoCapture.
+Al presionar la tecla s, guarda la imagen en la carpeta especificada (D:/Trabajo/3dcamaras/Imagenes_cal/camara1/).
+Al presionar la tecla q, el script finaliza.
+Uso:
+
+Ideal para capturar imágenes del patrón de ajedrez necesarias para calibrar la cámara.
+CalibrarCamara.py
+Este script calibra una cámara usando imágenes de un patrón de ajedrez.
+
+Funcionamiento:
+
+Detecta esquinas del tablero de ajedrez en las imágenes capturadas.
+Calcula los parámetros intrínsecos de la cámara:
+Matriz intrínseca (cameraMatrix).
+Coeficientes de distorsión (dist).
+Guarda los resultados en archivos .pkl para usarlos más tarde.
+Corrige la distorsión en una imagen de prueba y muestra los resultados.
+Uso:
+
+Requiere imágenes de un tablero de ajedrez capturadas con tomarimagenesAjedrez.py.
+inferenciaCorreccionDistorsion.py
+Este script utiliza los parámetros de calibración para corregir la distorsión de imágenes capturadas en tiempo real desde la cámara.
+
+Funcionamiento:
+
+Carga los parámetros de calibración (cameraMatrix y dist) desde los archivos .pkl.
+Captura imágenes de la cámara en tiempo real.
+Corrige la distorsión usando cv2.undistort.
+Muestra la imagen original y la imagen corregida en ventanas separadas.
+Uso:
+
+Es ideal para verificar la calidad de la calibración y corregir distorsiones en aplicaciones en tiempo real.
