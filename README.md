@@ -4,6 +4,14 @@ Este repositorio muestra cómo realizar la calibración de una cámara web utili
 
 ---
 
+## **Ejemplo de resultados**
+
+A continuación, se muestra un ejemplo del resultado de la corrección de distorsión. La imagen original se encuentra a la izquierda y la imagen corregida a la derecha:
+
+![Ejemplo de corrección de distorsión](muestras/muestra.png)
+
+---
+
 ## **Descripción general**
 
 El proyecto incluye tres scripts principales que trabajan juntos para capturar imágenes, calibrar una cámara y aplicar la corrección de distorsión en tiempo real.
@@ -25,7 +33,7 @@ El proyecto incluye tres scripts principales que trabajan juntos para capturar i
 
 Para ejecutar los scripts, necesitas lo siguiente:
 
-- **Python 3.11+**
+- **Python 3.7+**
 - **OpenCV 4.0+**
 - **Patrón de ajedrez físico**: Un tablero con cuadros de tamaño conocido.
 - **Cámara web**: Compatible con OpenCV.
@@ -88,7 +96,9 @@ CalibracionWebCam/
 ├── inferenciaCorreccionDistorsion.py   # Script para corregir distorsión en tiempo real.
 ├── Imagenes_cal/             # Carpeta para almacenar imágenes capturadas.
 │   └── camara1/              # Imágenes del patrón de ajedrez.
-└── ResultadosCamara1/        # Parámetros de calibración generados.
-    ├── cameraMatrix.pkl      # Matriz intrínseca.
-    ├── dist.pkl              # Coeficientes de distorsión.
-    └── undistorted_image.png # Imagen corregida.
+├── ResultadosCamara1/        # Parámetros de calibración generados.
+│   ├── cameraMatrix.pkl      # Matriz intrínseca.
+│   ├── dist.pkl              # Coeficientes de distorsión.
+│   └── undistorted_image.png # Imagen corregida.
+└── muestras/                 # Carpeta con imágenes de ejemplo.
+    └── muestra.png
